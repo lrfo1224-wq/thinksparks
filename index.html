@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThinkSpark - Breaking News and Insights</title>
+    <meta name="description" content="Stay informed with ThinkSpark, your source for breaking news, trending stories, tech updates, world events, business insights, and opinion pieces.">
+    <meta name="keywords" content="news, breaking news, tech, world, business, opinion, ThinkSpark">
+    <meta name="author" content="ThinkSpark">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="ThinkSpark - Breaking News and Insights">
+    <meta property="og:description" content="Stay informed with ThinkSpark, your source for breaking news, trending stories, tech updates, world events, business insights, and opinion pieces.">
+    <meta property="og:image" content="https://example.com/thinkspark-logo.png">
+    <meta property="og:url" content="https://thinkspark.com">
+    <meta property="og:type" content="website">
+    
+    <!-- Schema Markup for NewsArticle (Example for Featured Article) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "NewsArticle",
+        "headline": "Breaking: Major Tech Breakthrough Announced",
+        "image": "https://example.com/breaking-news-image.jpg",
+        "datePublished": "2023-10-01",
+        "dateModified": "2023-10-01",
+        "author": {
+            "@type": "Person",
+            "name": "ThinkSpark Staff"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "ThinkSpark",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://example.com/thinkspark-logo.png"
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://thinkspark.com/breaking-tech-news"
+        }
+    }
+    </script>
+    
+    <style>
+        /* Mobile-first CSS */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.6;
+        }
+        
+        header {
+            position: sticky;
+            top: 0;
+            background-color: #000000;
+            color: #ffffff;
+            padding: 10px;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        nav {
+            display: none; /* Hidden on mobile, shown via JS */
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+        }
+        
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        
+        .menu-toggle {
+            display: block;
+            background: none;
+            border: none;
+            color: #ffffff;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        .search-bar {
+            display: flex;
+            margin: 10px;
+        }
+        
+        .search-bar input {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ccc;
+        }
+        
+        .search-bar button {
+            padding: 8px 12px;
+            background-color: #000000;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .featured {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .featured h1 {
+            font-size: 28px;
+        }
+        
+        .news-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            padding: 20px;
+        }
+        
+        .news-card {
+            border: 1px solid #ddd;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+        
+        .news-card img {
+            width: 100%;
+            height: auto;
+        }
+        
+        .news-card h3 {
+            margin: 10px 0;
+        }
+        
+        .news-card .meta {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .sidebar {
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        
+        .sidebar h2 {
+            font-size: 20px;
+        }
+        
+        .newsletter {
+            padding: 20px;
+            text-align: center;
+            background-color: #000000;
+            color: #ffffff;
+        }
+        
+        .newsletter input {
+            padding: 8px;
+            margin: 10px;
+            width: 200px;
+        }
+        
+        .newsletter button {
+            padding: 8px 12px;
+            background-color: #ffffff;
+            color: #000000;
+            border: none;
+            cursor: pointer;
+        }
+        
+        footer {
+            background-color: #000000;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        footer a {
+            color: #ffffff;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        
+        /* AdSense placeholders */
+        .adsense-placeholder {
+            background-color: #ddd;
+            padding: 20px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        /* Tablet and Desktop */
+        @media (min-width: 768px) {
+            .container {
+                display: grid;
+                grid-template-columns: 3fr 1fr;
+                gap: 20px;
+            }
+            
+            nav {
+                display: block;
+            }
+            
+            .menu-toggle {
+                display: none;
+            }
+            
+            .news-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .news-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">ThinkSpark</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#trending">Trending</a></li>
+                <li><a href="#tech">Tech</a></li>
+                <li><a href="#world">World</a></li>
+                <li><a href="#business">Business</a></li>
+                <li><a href="#opinion">Opinion</a></li>
+            </ul>
+        </nav>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    </header>
+    
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search news...">
+        <button onclick="searchNews()">Search</button>
+    </div>
+    
+    <section class="featured">
+        <h1>Breaking News</h1>
+        <div class="news-card">
+            <img src="https://via.placeholder.com/400x200?text=Breaking+News" alt="Breaking news image">
+            <h2>Major Tech Breakthrough Announced</h2>
+            <p class="meta">Category: Tech | Date: October 1, 2023</p>
+            <p>Details about the breaking news...</p>
+        </div>
+    </section>
+    
+    <div class="container">
+        <main>
+            <h2>Latest News</h2>
+            <div class="news-grid" id="newsGrid">
+                <!-- News Cards -->
+                <div class="news-card">
+                    <img src="https://via.placeholder.com/300x150?text=News+1" alt="News article image 1">
+                    <h3>Trending Story Title 1</h3>
+                    <p class="meta">Category: Trending | Date: October 1, 2023</p>
+                    <p>Summary...</p>
+                </div>
+                <div class="news-card">
+                    <img src="https://via.placeholder.com/300x150?text=News+2" alt="News article image 2">
+                    <h3>World News Title 2</h3>
+                    <p class="meta">Category: World | Date: October 1, 2023</p>
+                    <p>Summary...</p>
+                </div>
+                <div class="news-card">
+                    <img src="https://via.placeholder.com/300x150?text=News+3" alt="News article image 3">
+                    <h3>Business Update Title 3</h3>
+                    <p class="meta">Category: Business | Date: October 1, 2023</p>
+                    <p>Summary...</p>
+                </div>
+                <!-- Add more cards as needed -->
+            </div>
+            <div class="adsense-placeholder">Google AdSense Space 1</div>
+        </main>
+        
+        <aside class="sidebar">
+            <h2>Trending Posts</h2>
+            <ul>
+                <li><a href="#">Trending Post 1</a></li>
+                <li><a href="#">Trending Post 2</a></li>
+                <li><a href="#">Trending Post 3</a></li>
+            </ul>
+            <div class="adsense-placeholder">Google AdSense Space 2</div>
+        </aside>
+    </div>
+    
+    <section class="newsletter">
+        <h2>Subscribe to Our Newsletter</h2>
+        <input type="email" placeholder="Enter your email">
+        <button onclick="subscribe()">Subscribe</button>
+    </section>
+    
+    <footer>
+        <a href="#about">About</a>
+        <a href="#privacy">Privacy Policy</a>
+        <a href="#contact">Contact</a>
+        <p>&copy; 2023 ThinkSpark. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('nav');
+            nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
+        }
+        
+        function searchNews() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.news-card');
+            cards.forEach(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                card.style.display = title.includes(query) ? 'block' : 'none';
+            });
+        }
+        
+        function subscribe() {
+            alert('Thank you for subscribing!');
+        }
+    </script>
+</body>
+</html>
